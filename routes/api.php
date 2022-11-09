@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,7 @@ Route::get('me',function(){
         'Class' => 'XII RPL 6'
     ];
 });
+
+Route::resource('books', BookController::class)->except(
+    ['create', 'edit']
+);
